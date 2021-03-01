@@ -21,7 +21,13 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
-        while (j <= i) {
+        if (i == 0){
+            prev = current;
+            current = current.getNext();
+            head = current;
+            return;
+        }
+        while (j < i) {
             prev = current;
             current = current.getNext();
             j++;
@@ -95,13 +101,15 @@ public class LinkedList {
         if(arr.length == 0) {
             return;
         }
-        while(i<arr.length){
-            prev = current;
-            current = current.getNext();
-        if(i/2 != 0) {
-            prev.setNext(current.getNext());
+        if(arr.length == 2) {
+            removeAtIndex(2);
+            return;
         }
-        i++;
+        while(i<arr.length){
+        if(i/2 != 0) {
+            removeAtIndex(i);
+            i++;
+        }
         }
     }
 
