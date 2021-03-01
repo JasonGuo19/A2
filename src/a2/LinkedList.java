@@ -146,16 +146,19 @@ public class LinkedList {
      * @param factor the amount to multiply the number of occurrences of each element by
      */
     public void multiply(int factor) {
-        int i = 0;
+        int i = 1;
+        int j = 0;
         Node current = head, previous = null;
         if(factor==0){
             return;
         }
-        while(i<factor){
+        while(j<size){
+            if(i<factor){
             previous=current;
-            current.setNext(current);
-            i++;
+            previous.setNext(current);
+            i++;j++;
         }
+            current = current.getNext();
 
     }
 
