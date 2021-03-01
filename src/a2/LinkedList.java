@@ -125,7 +125,21 @@ public class LinkedList {
      */
 
     public boolean isSymmetrical() {
-        return false;
+        int[] arr = toArray();
+        if(arr.length == 0) {
+            return true;
+        }
+        if(arr.length == 1) {
+            return true;
+        }
+        int i = 0;
+        int j = arr.length;
+        while(i<arr.length/2){
+            if(arr[i]!= arr[j]){
+                return false;
+            } i++;j--;
+        }
+        return true;
     }
 
 
