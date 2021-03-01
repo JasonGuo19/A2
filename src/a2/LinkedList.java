@@ -21,7 +21,10 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
-        while (j <= i) {
+        if (i == 0){
+            head = null;
+        }
+        while (j < i) {
             prev = current;
             current = current.getNext();
             j++;
@@ -98,9 +101,8 @@ public class LinkedList {
         if(i/2 != 0) {
             arr[i] = arr[i+1];
             i++;
+        }i++;
         }
-        i++;
-        } return;
     }
 
     /**
