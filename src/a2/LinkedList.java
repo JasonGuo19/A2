@@ -21,6 +21,9 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
+        if (j == i){
+            head = head.getNext();
+        }
         while (j < i) {
             prev = current;
             current = current.getNext();
