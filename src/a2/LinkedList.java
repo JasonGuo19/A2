@@ -165,6 +165,19 @@ public class LinkedList {
      *
      */
     public void reverse() {
+        Node current = null, previous = null;
+        int i=0;
+        int[] arr = toArray();
+        if(size ==0){
+            return;
+        }
+        if(size == 1){
+            return;
+        }
+        while(i<size){
+
+        }
+
 
     }
 
