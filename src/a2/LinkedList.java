@@ -22,7 +22,10 @@ public class LinkedList {
         Node current = head, prev = null;
         int j = 0;
         if (i == 0) {
-           remove(current.getValue());
+            prev = current;
+            current = current.getNext();
+            head = current;
+            return;
         }
         while (j < i) {
             prev = current;
@@ -94,20 +97,6 @@ public class LinkedList {
      * list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
-        Node current = head;
-        int i=0;
-        if(isEmpty()){
-            return;
-        }
-        if(size == 1){
-            return;
-        }
-        int[] arr = toArray();
-        while(i<arr.length){
-            remove(i+1);
-            i++;
-        }
-
     }
 
     /**
@@ -155,29 +144,7 @@ public class LinkedList {
      * @param factor the amount to multiply the number of occurrences of each element by
      */
     public void multiply(int factor) {
-        Node current = head;
-        if(factor == 0){
-            clear();
-        }
-        if(factor == 1){
-            return;
-        }
-        int[] arr = toArray();
-        int k = arr.length;
-        int i = 0;
-        int j =1;
-        while(i<k){
-            if(j<factor){
-                current.setNext(current);
-                size++;
-                j++;
-            } else {
-                current = current.getNext();
-            }
-            i++;
-        }
     }
-
 
     /**
      * Reverse the list
@@ -204,6 +171,7 @@ public class LinkedList {
         }
     }
 
+
     /**
      * Given a sorted linked list, remove the duplicate values from the list
      * ex: list: 5 -> 6 -> 7 -> 7 -> 7 -> 8 -> 8 -> 9
@@ -211,22 +179,8 @@ public class LinkedList {
      *
      */
     public void removeRepeats() {
-        Node current = head;
-        int i = 0;
-        int[] arr = toArray();
-        int j = arr.length;
-        if(j==0){return;}
-        if(j==1){return;}
-        while(i<j) {
-            for (int k = 0; k < j; k++) {
-                if (current.getValue() == arr[k]) {
-                    removeAtIndex(arr[k]);
-                    current = current.getNext();
-                }
-                i++;
-        }
+
     }
-}
 
 
     /**
@@ -243,11 +197,6 @@ public class LinkedList {
      * @return true if the list contains a cycle, false otherwise
      */
     public boolean containsCycle() {
-        Node current = head, temp = null;
-        int i = size;
-        while(i<size){
-
-        }
         return false;
     }
 
@@ -272,25 +221,18 @@ public class LinkedList {
         int[] arr = toArray();
         int[] arr1 = list2.toArray();
         int i = arr.length;
+        int j = arr.length+arr1.length;
+        int k = 0;
         if(i == 0){
             return;
         }
-        if(arr.length == 0) {
+        if(arr1.length == 0) {
             return;
         }
-        Node current = head, temp = null;
-        int k=0;
-        while(k<i){
-            temp = current;
-            current.setValue(arr1[k]);
-            current.setNext(current);
-            temp =current;
-            current.setValue(arr[k]);
-            current.setNext(current);
+        while(i<j){
+            arr[i] = arr1[k];
             k++;
-        }
-
-
+        }i++;
 
     }
 
@@ -521,5 +463,4 @@ public class LinkedList {
         }
         return list;
     }
-
 }
