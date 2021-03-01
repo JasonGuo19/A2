@@ -21,17 +21,17 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
+        if(i == 0) {
+            current = current.getNext();
+            head = current;
+        }
         while (j < i) {
             prev = current;
             current = current.getNext();
             j++;
         }
-        if(i == 0) {
-            head = head.getNext();
-        }
-
         prev.setNext(current.getNext());
-}
+    }
 
 
     /**
@@ -74,14 +74,14 @@ public class LinkedList {
         int[] arr1 = toArray();
         int[] arr2 = list2.toArray();
         if(arr1.length != arr2.length){
-        return false;
+            return false;
         }
         int i=1;
         while(i<arr1.length) {
             if(arr1[i] != arr2[i]){
                 return false;
             }
-        i++;
+            i++;
         }
         return true;
     }
@@ -93,7 +93,16 @@ public class LinkedList {
      *     list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
+        Node current = head, prev = null;
+        int i = size;
+        if(i==1){
+            return;
+        }
+        if(i==2){
+            getHead();
+        }
     }
+
     /**
      * Return true if the list is symmetrical, false otherwise
      * ex: list: 1 -> 2 -> 3 -> 2 -> 1
@@ -154,6 +163,7 @@ public class LinkedList {
             current = current.getNext();
         }
     }
+
     /**
      * Reverse the list
      *
@@ -162,29 +172,6 @@ public class LinkedList {
      *
      */
     public void reverse() {
-        Node current = head, previous = null;
-        int i=0;
-        int[] arr = toArray();
-        if(size ==0){
-            getHead();
-        }
-        if(size == 1){
-            getHead();
-        }
-        while(i<size){
-            int j = size;
-            if(i == 0){
-                current.setValue(arr[j-1]);
-                i++;j--;
-            } else {
-                previous = current;
-                current.setValue(arr[j-1]);
-                previous.setNext(current);
-                i++;j--;
-            }
-
-        }
-
 
     }
 
