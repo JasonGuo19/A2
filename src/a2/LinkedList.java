@@ -153,7 +153,7 @@ public class LinkedList {
      * list after reverse: 7 -> 8 -> 9 -> 10
      */
     public void reverse() {
-        Node current = head;
+        Node current = null;
         if (size == 0) {
             return;
         }
