@@ -96,10 +96,9 @@ public class LinkedList {
         Node current = head, prev = null;
         int i = size;
         if (i == 1) {
-            return;
+            getHead();
         }
         if (i == 2) {
-
         }
     }
     /**
@@ -150,7 +149,7 @@ public class LinkedList {
         int j = 0;
         Node current = head, previous = null;
         if (factor == 0) {
-            return;
+            getHead()  ;
         }
         while (j < size) {
             if (i < factor) {
@@ -174,10 +173,10 @@ public class LinkedList {
         int i=0;
         int[] arr = toArray();
         if(size ==0){
-            return;
+            getHead();
         }
         if(size == 1){
-            return;
+            getHead();
         }
         while(i<size){
             int j = size;
