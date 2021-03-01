@@ -97,6 +97,12 @@ public class LinkedList {
      * list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
+        Node current = head;
+        int i=0;
+        int[] arr = toArray();
+        while(i<arr.length){
+        }
+
     }
 
     /**
@@ -144,7 +150,29 @@ public class LinkedList {
      * @param factor the amount to multiply the number of occurrences of each element by
      */
     public void multiply(int factor) {
+        Node current = head;
+        if(factor == 0){
+            clear();
+        }
+        if(factor == 1){
+            return;
+        }
+        int[] arr = toArray();
+        int k = arr.length;
+        int i = 0;
+        int j =1;
+        while(i<k){
+            if(j<factor){
+                current.setNext(current);
+                size++;
+                j++;
+            } else {
+                current = current.getNext();
+            }
+            i++;
+        }
     }
+
 
     /**
      * Reverse the list
@@ -153,6 +181,20 @@ public class LinkedList {
      * list after reverse: 7 -> 8 -> 9 -> 10
      */
     public void reverse() {
+        Node current = head, temp = null;
+        if (size == 0) {
+            return;
+        }
+        if (size == 1) {
+            return;
+        }
+        int i = 0;
+        int[] arr = toArray();
+        int j = arr.length;
+        while (i < size) {
+            head.setValue(arr[j]);
+
+        }
     }
 
     /**
@@ -162,8 +204,22 @@ public class LinkedList {
      *
      */
     public void removeRepeats() {
-
+        Node current = head;
+        int i = 0;
+        int[] arr = toArray();
+        int j = arr.length;
+        if(j==0){return;}
+        if(j==1){return;}
+        while(i<j) {
+            for (int k = 0; k < j; k++) {
+                if (current.getValue() == arr[k]) {
+                    removeAtIndex(arr[k]);
+                    current = current.getNext();
+                }
+                i++;
+        }
     }
+}
 
 
     /**
@@ -180,6 +236,11 @@ public class LinkedList {
      * @return true if the list contains a cycle, false otherwise
      */
     public boolean containsCycle() {
+        Node current = head, temp = null;
+        int i = size;
+        while(i<size){
+
+        }
         return false;
     }
 

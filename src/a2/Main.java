@@ -9,7 +9,7 @@ public class Main {
         list.add(2);
         list.add(3);
 
-        list.removeOdds();
+        list.removeAtIndex(0);
         System.out.println(list.toString());
     }
 }
