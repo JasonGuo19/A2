@@ -18,13 +18,25 @@ public class LinkedList {
      * @param i    - index of node to remove
      */
     public void removeAtIndex(int i) {
-    }
+        validIndex(i);
+        Node current = head, prev = null;
+        int j = 0;
+        while (j < i) {
+            prev = current;
+            current = current.getNext();
+            j++;
+        }
+        prev.setNext(current.getNext());
+}
+
 
     /**
      * Compute and return the average of all the numbers in the linked list rounded down to the nearest integer
      * @return an int that is the floor of the mean of the list.
      */
-    public int mean() { return -1; }
+    public int mean() {
+
+        return -1; }
 
     /**
      * Return true if this linked list is equal to the list argument, false otherwise.
