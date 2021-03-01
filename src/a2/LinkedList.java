@@ -25,6 +25,7 @@ public class LinkedList {
             prev = current;
             current = current.getNext();
             head = current;
+            return;
         }
         while (j < i) {
             prev = current;
@@ -104,9 +105,9 @@ public class LinkedList {
             prev = current;
             current = current.getNext();
         if(i/2 != 0) {
-            i++;
             prev.setNext(current.getNext());
-        }else{ i++;}
+        }
+        i++;
         }
     }
 
