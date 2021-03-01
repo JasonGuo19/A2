@@ -93,13 +93,6 @@ public class LinkedList {
      *     list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
-        Node current = head, prev = null;
-        int i = size;
-        if (i == 1) {
-            getHead();
-        }
-        if (i == 2) {
-        }
     }
     /**
      * Return true if the list is symmetrical, false otherwise
