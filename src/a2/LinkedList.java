@@ -38,8 +38,16 @@ public class LinkedList {
      * @return an int that is the floor of the mean of the list.
      */
     public int mean() {
-
-        return -1; }
+        int average = 0;
+        int i = 0;
+        int[] arr = toArray();
+        while(i< arr.length) {
+            int current = arr[i];
+            average = average + current;
+            i++;
+        }
+        average = average/arr.length;
+        return average; }
 
     /**
      * Return true if this linked list is equal to the list argument, false otherwise.
