@@ -41,6 +41,9 @@ public class LinkedList {
         int average = 0;
         int i = 0;
         int[] arr = toArray();
+        if (arr.length == 0) {
+            return 0;
+        }
         while(i< arr.length) {
             int current = arr[i];
             average = average + current;
