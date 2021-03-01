@@ -203,18 +203,21 @@ public class LinkedList {
     public void merge(LinkedList list2) {
         int[] arr = toArray();
         int[] arr1 = list2.toArray();
-        int i = arr1.length;
+        int i = arr.length;
         if(i == 0){
             return;
         }
         if(arr.length == 0) {
             return;
         }
-        Node current = tail, temp = null;
-        int k =0;
+        Node current = head, temp = null;
+        int k=0;
         while(k<i){
             temp = current;
             current.setValue(arr1[k]);
+            current.setNext(current);
+            temp =current;
+            current.setValue(arr[k]);
             current.setNext(current);
             k++;
         }
