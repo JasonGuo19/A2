@@ -10,18 +10,18 @@ public class LinkedList {
      * Remove the node at index i of the list.
      * Note that the first element is at index 0
      * If i is larger than the size of the list, throw an IndexOutOfBounds Exception
-     *
+     * <p>
      * ex: list: 1 -> 2 -> 3 -> 4
-     *     i: 1
-     *     list after removeAtIndex: 1 -> 3 -> 4
+     * i: 1
+     * list after removeAtIndex: 1 -> 3 -> 4
      *
-     * @param i    - index of node to remove
+     * @param i - index of node to remove
      */
     public void removeAtIndex(int i) {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
-        if(i == 0) {
+        if (i == 0) {
             current = current.getNext();
             head = current;
         }
@@ -36,6 +36,7 @@ public class LinkedList {
 
     /**
      * Compute and return the average of all the numbers in the linked list rounded down to the nearest integer
+     *
      * @return an int that is the floor of the mean of the list.
      */
     public int mean() {
@@ -45,40 +46,41 @@ public class LinkedList {
         if (arr.length == 0) {
             return 0;
         }
-        while(i< arr.length) {
+        while (i < arr.length) {
             int current = arr[i];
             average = average + current;
             i++;
         }
-        average = average/arr.length;
-        if (average<0) {
-            average = average-1;
+        average = average / arr.length;
+        if (average < 0) {
+            average = average - 1;
         }
-        return average; }
+        return average;
+    }
 
     /**
      * Return true if this linked list is equal to the list argument, false otherwise.
      * Two lists are equal if they have the same size, and the same
      * elements in the same order.
      * ex:  list: 1 -> 4 -> 2
-     *      list2: 1 -> 4 -> 2
-     *      return: true
-     *
-     *      list: 1 -> 5
-     *      list2: 2 -> 5
-     *      return false;
+     * list2: 1 -> 4 -> 2
+     * return: true
+     * <p>
+     * list: 1 -> 5
+     * list2: 2 -> 5
+     * return false;
      *
      * @return true if the lists have the same elements in the same order, false otherwise
      */
     public boolean isEqual(LinkedList list2) {
         int[] arr1 = toArray();
         int[] arr2 = list2.toArray();
-        if(arr1.length != arr2.length){
+        if (arr1.length != arr2.length) {
             return false;
         }
-        int i=1;
-        while(i<arr1.length) {
-            if(arr1[i] != arr2[i]){
+        int i = 1;
+        while (i < arr1.length) {
+            if (arr1[i] != arr2[i]) {
                 return false;
             }
             i++;
@@ -88,17 +90,17 @@ public class LinkedList {
 
     /**
      * Remove all the nodes at odd indices from the list. Remember that the first Node is at index 0
-     *
+     * <p>
      * ex: list: 1 -> 3 -> 4 -> 2 -> 8
-     *     list after removeOdds: 1 -> 4 -> 8
+     * list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
         Node current = head, prev = null;
         int i = size;
-        if(i==1){
+        if (i == 1) {
             return;
         }
-        if(i==2){
+        if (i == 2) {
             getHead();
         }
     }
@@ -106,32 +108,33 @@ public class LinkedList {
     /**
      * Return true if the list is symmetrical, false otherwise
      * ex: list: 1 -> 2 -> 3 -> 2 -> 1
-     *     return: true
-     *
-     *     list: 1 -> 2 -> 3 -> 4 -> 5
-     *     return: false
+     * return: true
+     * <p>
+     * list: 1 -> 2 -> 3 -> 4 -> 5
+     * return: false
      *
      * @return true if the list is symmetrical, false otherwise
      */
 
     public boolean isSymmetrical() {
         int[] arr = toArray();
-        if(arr.length == 0) {
+        if (arr.length == 0) {
             return true;
         }
-        if(arr.length == 1) {
+        if (arr.length == 1) {
             return true;
         }
-        if(arr.length/2 == 0) {
+        if (arr.length / 2 == 0) {
             return false;
         }
         int i = 0;
         int j = arr.length;
-        while(i<arr.length/2){
-            if(arr[i]!= arr[j-1]){
+        while (i < arr.length / 2) {
+            if (arr[i] != arr[j - 1]) {
                 return false;
             }
-            i++;j--;
+            i++;
+            j--;
         }
         return true;
     }
@@ -141,39 +144,12 @@ public class LinkedList {
      * Stretch the list so that each element in the list is represented factor times
      * If the factor is 0 the list should be cleared (have 0 nodes)
      * ex: list: 1 -> 2 -> 3
-     *     factor: 3
-     *     list after multiply: 1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 3 -> 3 -> 3
+     * factor: 3
+     * list after multiply: 1 -> 1 -> 1 -> 2 -> 2 -> 2 -> 3 -> 3 -> 3
      *
      * @param factor the amount to multiply the number of occurrences of each element by
      */
-    public void multiply(int factor) {
-        int i = 1;
-        int j = 0;
-        Node current = head, previous = null;
-        if (factor == 0) {
-            getHead()  ;
-        }
-        while (j < size) {
-            if (i < factor) {
-                previous = current;
-                previous.setNext(current);
-                i++;
-                j++;
-            }
-            current = current.getNext();
-        }
-    }
 
-    /**
-     * Reverse the list
-     *
-     * ex list:  10 -> 9 -> 8 -> 7
-     *    list after reverse: 7 -> 8 -> 9 -> 10
-     *
-     */
-    public void reverse() {
-
-    }
 
     /**
      * Given a sorted linked list, remove the duplicate values from the list
@@ -181,7 +157,22 @@ public class LinkedList {
      *     list after removeRepeats: 5 -> 6 -> 7 -> 8 -> 9
      *
      */
-    public void removeRepeats() { }
+    public void removeRepeats() {
+        Node current = head;
+        int i = 0;
+        int[] arr = toArray();
+        int j = arr.length;
+        if(j==0){return;}
+        if(j==1){return;}
+        while(i<j) {
+            for (int k = 0; k < j; k++) {
+                if (current.getValue() == arr[k]) {
+                    removeAtIndex(arr[k]);
+                }
+            }
+            current = current.getNext();
+        }i++;
+    }
 
 
     /**
