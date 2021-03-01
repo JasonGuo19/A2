@@ -21,7 +21,7 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
-        if (j == i){
+        if (i == 0){
             head = head.getNext();
         }
         while (j < i) {
