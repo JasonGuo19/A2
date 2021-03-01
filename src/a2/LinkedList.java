@@ -153,7 +153,7 @@ public class LinkedList {
      * list after reverse: 7 -> 8 -> 9 -> 10
      */
     public void reverse() {
-        Node current = null;
+        Node current = head;
         if (size == 0) {
             return;
         }
@@ -162,10 +162,10 @@ public class LinkedList {
         }
         int i = 0;
         int[] arr = toArray();
-        int j = arr.length;
-        head.setValue(arr[j-1]);
-        while (j-2 >= 0) {
-            current.setValue(arr[j-2]);
+        int j = arr.length -1;
+        head.setValue(arr[j]);
+        while (j >= 0) {
+            current.setValue(arr[j]);
             head.setNext(current);
             j--;
         }
