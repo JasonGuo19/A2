@@ -170,14 +170,14 @@ public class LinkedList {
         if(factor == 1){
             return;
         }
+        ArrayList<Integer> arr1 = new ArrayList<>();
         int[] arr = toArray();
         int k = arr.length;
         int i = 0;
-        int j =1;
+        int j =0;
         while(i<k){
             if(j<factor){
-                current.setNext(current);
-                size++;
+                arr1.add(current.getValue());
                 j++;
             } else {
                 current = current.getNext();
@@ -228,7 +228,7 @@ public class LinkedList {
                 remove(current.getValue());
             }
             arr1.add(current.getValue());
-            current=current.getNext();
+            current = current.getNext();
             if(arr1.contains(current.getValue())){
                 remove(current.getValue());
             }
