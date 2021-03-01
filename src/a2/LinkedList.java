@@ -25,6 +25,7 @@ public class LinkedList {
             prev = current;
             current = current.getNext();
             head = current;
+            return;
         }
         while (j < i) {
             prev = current;
