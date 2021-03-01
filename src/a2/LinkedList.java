@@ -21,11 +21,8 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
-        if (i == 0){
-            prev = current;
-            current = current.getNext();
-            head = current;
-            return;
+        if(i == 0) {
+            head = head.getNext();
         }
         while (j < i) {
             prev = current;
@@ -95,7 +92,19 @@ public class LinkedList {
      *     list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
-
+        int[] arr = toArray();
+        Node current = head, prev = null;
+        for(int j=0; j<arr.length; j++ ){
+            if(j/2 == 0){
+                prev = current;
+                current = current.getNext();
+        }
+            if(j/2 != 0){
+                prev = current;
+                current = current.getNext();
+                prev.setNext(current);
+            }
+            j++;
     }
 
     /**
@@ -125,7 +134,8 @@ public class LinkedList {
         while(i<arr.length/2){
             if(arr[i]!= arr[j-1]){
                 return false;
-            } i++;j--;
+            }
+            i++;j--;
         }
         return true;
     }
