@@ -22,7 +22,7 @@ public class LinkedList {
         Node current = head, prev = null;
         int j = 0;
         if (i == 0){
-            head = current.getNext();
+            head = null;
         }
         while (j < i) {
             prev = current;
@@ -91,7 +91,19 @@ public class LinkedList {
      * ex: list: 1 -> 3 -> 4 -> 2 -> 8
      *     list after removeOdds: 1 -> 4 -> 8
      */
-    public void removeOdds() { }
+    public void removeOdds() {
+        int i = 0;
+        int[] arr = toArray();
+        if(arr.length == 0) {
+            return;
+        }
+        while(i< arr.length){
+        if(i/2 != 0) {
+            arr[i] = arr[i+1];
+            i++;
+        }i++;
+        }
+    }
 
     /**
      * Return true if the list is symmetrical, false otherwise
