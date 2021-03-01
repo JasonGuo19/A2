@@ -22,7 +22,7 @@ public class LinkedList {
         Node current = head, prev = null;
         int j = 0;
         if (i == 0){
-            head = head.getNext();
+            prev.setNext(current.getNext());
         }
         while (j < i) {
             prev = current;
@@ -72,12 +72,15 @@ public class LinkedList {
     public boolean isEqual(LinkedList list2) {
         int[] arr1 = toArray();
         int[] arr2 = list2.toArray();
-        int i=1;
         if(arr1.length != arr2.length){
         return false;
-        }else if(arr1[i] != arr2[i]) {
-        return false;
-        }else { i++;
+        }
+        int i=1;
+        while(i<arr1.length) {
+            if(arr1[i] != arr2[i]){
+                return false;
+            }
+        i++;
         }
         return true;
     }
