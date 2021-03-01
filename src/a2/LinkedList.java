@@ -22,10 +22,7 @@ public class LinkedList {
         Node current = head, prev = null;
         int j = 0;
         if (i == 0) {
-            prev = current;
-            current = current.getNext();
-            head = current;
-            return;
+           remove(current.getValue());
         }
         while (j < i) {
             prev = current;
@@ -99,8 +96,16 @@ public class LinkedList {
     public void removeOdds() {
         Node current = head;
         int i=0;
+        if(isEmpty()){
+            return;
+        }
+        if(size == 1){
+            return;
+        }
         int[] arr = toArray();
         while(i<arr.length){
+            remove(i+1);
+            i++;
         }
 
     }
@@ -181,7 +186,7 @@ public class LinkedList {
      * list after reverse: 7 -> 8 -> 9 -> 10
      */
     public void reverse() {
-        Node current = head, temp = null;
+        Node current = head;
         if (size == 0) {
             return;
         }
@@ -191,9 +196,11 @@ public class LinkedList {
         int i = 0;
         int[] arr = toArray();
         int j = arr.length;
-        while (i < size) {
-            head.setValue(arr[j]);
-
+        head.setValue(arr[j-1]);
+        while (j-2 >= 0) {
+            current.setValue(arr[j-2]);
+            head.setNext(current);
+            j--;
         }
     }
 
