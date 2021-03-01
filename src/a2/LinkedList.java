@@ -21,14 +21,15 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
-        if(i == 0) {
-            head.setNext(head.getNext());
-        }
         while (j < i) {
             prev = current;
             current = current.getNext();
             j++;
         }
+        if(i == 0) {
+            head = head.getNext();
+        }
+
         prev.setNext(current.getNext());
 }
 
@@ -153,6 +154,7 @@ public class LinkedList {
         while(i<factor){
             previous=current;
             current.setNext(current);
+            i++;
         }
 
     }
@@ -165,7 +167,7 @@ public class LinkedList {
      *
      */
     public void reverse() {
-        Node current = null, previous = null;
+        Node current = head, previous = null;
         int i=0;
         int[] arr = toArray();
         if(size ==0){
@@ -175,6 +177,16 @@ public class LinkedList {
             return;
         }
         while(i<size){
+            int j = size;
+            if(i == 0){
+                current.setValue(arr[j-1]);
+                i++;j--;
+            } else {
+                previous = current;
+                current.setValue(arr[j-1]);
+                previous.setNext(current);
+                i++;j--;
+            }
 
         }
 
