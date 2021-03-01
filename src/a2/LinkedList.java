@@ -22,7 +22,7 @@ public class LinkedList {
         Node current = head, prev = null;
         int j = 0;
         if(i == 0) {
-            current = current.getNext();
+            head.setNext(head.getNext());
         }
         while (j < i) {
             prev = current;
@@ -98,8 +98,7 @@ public class LinkedList {
             return;
         }
         if(i==2){
-            getHead();
-        }
+
     }
 
     /**
