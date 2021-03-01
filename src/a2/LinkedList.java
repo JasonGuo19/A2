@@ -201,6 +201,21 @@ public class LinkedList {
      * @param list2
      */
     public void merge(LinkedList list2) {
+        int[] arr = toArray();
+        int[] arr1 = list2.toArray();
+        int i = arr.length;
+        int j = arr.length+arr1.length;
+        int k = 0;
+        if(i == 0){
+            return;
+        }
+        if(arr1.length == 0) {
+            return;
+        }
+        while(i<j){
+            arr[i] = arr1[k];
+            k++;
+        }i++;
 
     }
 
