@@ -96,22 +96,6 @@ public class LinkedList {
      * list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
-        Node current = head;
-        int[] arr = toArray();
-        int j =0;
-        int i = size;
-        if (i == 1) {
-            return;
-        }
-        if (i == 2) {
-            head.setNext(null);
-        }
-        while(j<i){
-            if(j%2!= 0){
-                removeAtIndex(j);
-            }
-            j++;
-        }
     }
 
     /**
@@ -159,23 +143,6 @@ public class LinkedList {
      * @param factor the amount to multiply the number of occurrences of each element by
      */
     public void multiply(int factor) {
-        Node current = head, previous = null;
-        if (factor == 0) {
-            head = null;
-            return;
-        }
-        if (factor == 1) {
-            return;
-        }
-        int[] arr = toArray();
-        int k = arr.length;
-        for (int l = 0; l < k; l++) {
-            for (int j = 1; j < factor; j++) {
-                current.setValue(arr[l]);
-                previous = current;
-                current.setNext(previous);
-            }
-        }
     }
 
     /**
@@ -194,20 +161,7 @@ public class LinkedList {
      *
      */
     public void removeRepeats() {
-        Node current = head;
-        int i = 0;
-        int[] arr = toArray();
-        int j = arr.length;
-        if(j==0){return;}
-        if(j==1){return;}
-        while(i<j) {
-            for (int k = 0; k < j; k++) {
-                if (current.getValue() == arr[k]) {
-                    removeAtIndex(arr[k]);
-                }
-            }
-            current = current.getNext();
-        }i++;
+
     }
 
 
@@ -245,7 +199,9 @@ public class LinkedList {
      *
      * @param list2
      */
-    public void merge(LinkedList list2) { }
+    public void merge(LinkedList list2) {
+
+    }
 
 
     /* Implementation given to you. Do not modify below this. */

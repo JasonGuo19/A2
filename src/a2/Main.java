@@ -8,7 +8,8 @@ public class Main {
         list.add(1);
         list.add(2);
         list.add(3);
-        list.multiply(3);
+
+        list.removeOdds();
         System.out.println(list.toString());
     }
 }
