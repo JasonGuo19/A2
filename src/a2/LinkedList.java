@@ -22,7 +22,7 @@ public class LinkedList {
         Node current = head, prev = null;
         int j = 0;
         if(i == 0) {
-            head = head.getNext();
+            current = current.getNext();
         }
         while (j < i) {
             prev = current;
