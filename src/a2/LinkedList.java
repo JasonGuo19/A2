@@ -21,13 +21,7 @@ public class LinkedList {
         validIndex(i);
         Node current = head, prev = null;
         int j = 0;
-        if (i == 0){
-            prev = current;
-            current = current.getNext();
-            head = current;
-            return;
-        }
-        while (j < i) {
+        while (j <= i) {
             prev = current;
             current = current.getNext();
             j++;
