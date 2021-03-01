@@ -50,6 +50,9 @@ public class LinkedList {
             i++;
         }
         average = average/arr.length;
+        if (average<0) {
+            average = average+1;
+        }
         return average; }
 
     /**
