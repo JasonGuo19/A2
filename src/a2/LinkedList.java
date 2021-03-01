@@ -95,6 +95,7 @@ public class LinkedList {
      *     list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
+
     }
 
     /**
@@ -122,7 +123,7 @@ public class LinkedList {
         int i = 0;
         int j = arr.length;
         while(i<arr.length/2){
-            if(arr[i]!= arr[j]){
+            if(arr[i]!= arr[j-1]){
                 return false;
             } i++;j--;
         }
