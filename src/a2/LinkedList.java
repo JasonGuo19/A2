@@ -92,23 +92,13 @@ public class LinkedList {
      *     list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
-        int[] arr = toArray();
         Node current = head, prev = null;
-        int k = arr.length;
-        if(k == 0){return;}
-        if(k == 1){
-            prev = head.getNext();
-            head.setNext(prev.getNext());
+        int i = size;
+        if(i==1){
+            return;
         }
-        for (int j = 0; j < arr.length; j++) {
-            if (j / 2 == 0) {
-                prev = current;
-                current = current.getNext();
-                prev.setNext(current.getNext());
-            }
-            if (j / 2 != 0) {
-                current = current.getNext();
-            }
+        if(i==2){
+            getHead();
         }
     }
 
