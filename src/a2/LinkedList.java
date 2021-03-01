@@ -98,13 +98,11 @@ public class LinkedList {
             if (j / 2 == 0) {
                 prev = current;
                 current = current.getNext();
+                prev.setNext(current.getNext());
             }
             if (j / 2 != 0) {
-                prev = current;
                 current = current.getNext();
-                prev.setNext(current);
             }
-            j++;
         }
     }
 
