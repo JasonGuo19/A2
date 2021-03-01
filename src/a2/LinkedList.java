@@ -95,22 +95,6 @@ public class LinkedList {
      *     list after removeOdds: 1 -> 4 -> 8
      */
     public void removeOdds() {
-        int i = 0;
-        int[] arr = toArray();
-        Node current = head, prev = null;
-        if(arr.length == 0) {
-            return;
-        }
-        if(arr.length == 2) {
-            removeAtIndex(1);
-            return;
-        }
-        while(i<arr.length){
-        if(i/2 != 0) {
-            removeAtIndex(i-1);
-            i++;
-        }
-        }
     }
 
     /**
@@ -152,20 +136,7 @@ public class LinkedList {
      *
      * @param factor the amount to multiply the number of occurrences of each element by
      */
-    public void multiply(int factor) {
-        factor = size;
-        if(factor == 0 ) {
-            return;
-        }
-        if(factor == 1) {
-            return;
-        }
-        int i = 0;
-        Node current = head, prev = null;
-        while(i<size){
-            int j = factor;
-            for (j )
-    }
+    public void multiply(int factor) {}
 
     /**
      * Reverse the list
