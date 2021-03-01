@@ -102,12 +102,12 @@ public class LinkedList {
             return;
         }
         if(arr.length == 2) {
-            removeAtIndex(2);
+            removeAtIndex(1);
             return;
         }
         while(i<arr.length){
         if(i/2 != 0) {
-            removeAtIndex(i);
+            removeAtIndex(i-1);
             i++;
         }
         }
@@ -152,7 +152,20 @@ public class LinkedList {
      *
      * @param factor the amount to multiply the number of occurrences of each element by
      */
-    public void multiply(int factor) { }
+    public void multiply(int factor) {
+        factor = size;
+        if(factor == 0 ) {
+            return;
+        }
+        if(factor == 1) {
+            return;
+        }
+        int i = 0;
+        Node current = head, prev = null;
+        while(i<size){
+            int j = factor;
+            for (j )
+    }
 
     /**
      * Reverse the list
