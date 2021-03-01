@@ -116,6 +116,9 @@ public class LinkedList {
         if(arr.length == 1) {
             return true;
         }
+        if(arr.length/2 == 0) {
+            return false;
+        }
         int i = 0;
         int j = arr.length;
         while(i<arr.length/2){
