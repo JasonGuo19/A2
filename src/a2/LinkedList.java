@@ -149,7 +149,17 @@ public class LinkedList {
      *
      * @param factor the amount to multiply the number of occurrences of each element by
      */
+    public void multiply(int factor) {
+    }
 
+    /**
+     * Reverse the list
+     * <p>
+     * ex list:  10 -> 9 -> 8 -> 7
+     * list after reverse: 7 -> 8 -> 9 -> 10
+     */
+    public void reverse() {
+    }
 
     /**
      * Given a sorted linked list, remove the duplicate values from the list
