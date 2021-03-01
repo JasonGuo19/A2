@@ -149,19 +149,19 @@ public class LinkedList {
         int i = 1;
         int j = 0;
         Node current = head, previous = null;
-        if(factor==0){
+        if (factor == 0) {
             return;
         }
-        while(j<size){
-            if(i<factor){
-            previous=current;
-            previous.setNext(current);
-            i++;j++;
-        }
+        while (j < size) {
+            if (i < factor) {
+                previous = current;
+                previous.setNext(current);
+                i++;
+                j++;
+            }
             current = current.getNext();
-
+        }
     }
-
     /**
      * Reverse the list
      *
