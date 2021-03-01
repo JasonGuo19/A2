@@ -100,7 +100,7 @@ public class LinkedList {
             i++;
         }
         i++;
-        }
+        } return;
     }
 
     /**
