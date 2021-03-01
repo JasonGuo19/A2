@@ -70,7 +70,16 @@ public class LinkedList {
      * @return true if the lists have the same elements in the same order, false otherwise
      */
     public boolean isEqual(LinkedList list2) {
+        int[] arr1 = toArray();
+        int[] arr2 = list2.toArray();
+        int i=1;
+        if(arr1.length != arr2.length){
         return false;
+        }else if(arr1[i] != arr2[i]) {
+        return false;
+        }else { i++;
+        }
+        return true;
     }
 
     /**
