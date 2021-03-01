@@ -94,13 +94,13 @@ public class LinkedList {
     public void removeOdds() {
         Node current = head, prev = null;
         int i = size;
-        if(i==1){
+        if (i == 1) {
             return;
         }
-        if(i==2){
+        if (i == 2) {
 
+        }
     }
-
     /**
      * Return true if the list is symmetrical, false otherwise
      * ex: list: 1 -> 2 -> 3 -> 2 -> 1
@@ -144,7 +144,18 @@ public class LinkedList {
      *
      * @param factor the amount to multiply the number of occurrences of each element by
      */
-    public void multiply(int factor) {}
+    public void multiply(int factor) {
+        int i = 0;
+        Node current = head, previous = null;
+        if(factor==0){
+            return;
+        }
+        while(i<factor){
+            previous=current;
+            current.setNext(current);
+        }
+
+    }
 
     /**
      * Reverse the list
