@@ -8,8 +8,10 @@ public class Main {
         list.add(1);
         list.add(2);
         list.add(3);
+        list.add(4);
+        list.add(1);
 
-        list.removeOdds();
+        list.removeRepeats();
         System.out.println(list.toString());
     }
 }

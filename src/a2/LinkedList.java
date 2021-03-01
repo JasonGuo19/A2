@@ -1,5 +1,7 @@
 package a2;
 
+import java.util.ArrayList;
+
 public class LinkedList {
     private Node head = null;
     private Node tail = null;
@@ -112,7 +114,7 @@ public class LinkedList {
         while(i<arr.length){
             if(i%2 != 0) {
                 remove(arr[i]);
-            }
+            }i++;
         }
     }
 
@@ -217,9 +219,20 @@ public class LinkedList {
      *
      */
     public void removeRepeats() {
-
+        Node current = head;
+        int i = 0;
+        int[] arr = toArray();
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        for(int j =0; j<arr.length; j++)
+            if(arr1.contains(current.getValue())){
+                remove(current.getValue());
+            }
+            arr1.add(current.getValue());
+            current=current.getNext();
+            if(arr1.contains(current.getValue())){
+                remove(current.getValue());
+            }
     }
-
 
     /**
      * Return true if the list contains a cycle, false otherwise
@@ -235,6 +248,19 @@ public class LinkedList {
      * @return true if the list contains a cycle, false otherwise
      */
     public boolean containsCycle() {
+        Node current = head, temp = null;
+        int[] arr1 = toArray();
+        int i =0;
+        ArrayList<Node> arr = new ArrayList<>();
+        while(i<arr1.length){
+            arr.add(current);
+            current = current.getNext();
+            temp = current;
+            if(arr.contains(temp)){
+                return true;
+            }
+
+        }
         return false;
     }
 
@@ -259,21 +285,18 @@ public class LinkedList {
         int[] arr = toArray();
         int[] arr1 = list2.toArray();
         int i = arr.length;
-        int j = arr.length+arr1.length;
-        int k = 0;
-        if(i == 0){
-            return;
+        int j = arr1.length;
+        int q = i + j;
+        Node current = head, current1 = list2.head;
+        if (i == j) { ArrayList<Integer> arr2= new ArrayList();
+            for (int k = 0; k < i; k++) {
+                arr2.add(current.getValue());
+                current = current.getNext();
+                arr2.add(current1.getValue());
+                current1 = current1.getNext();
+            }
         }
-        if(arr1.length == 0) {
-            return;
-        }
-        while(i<j){
-            arr[i] = arr1[k];
-            k++;
-        }i++;
-
     }
-
 
     /* Implementation given to you. Do not modify below this. */
 
