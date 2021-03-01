@@ -22,7 +22,9 @@ public class LinkedList {
         Node current = head, prev = null;
         int j = 0;
         if (i == 0){
-            head = null;
+            prev = current;
+            current = current.getNext();
+            head = current;
         }
         while (j < i) {
             prev = current;
@@ -94,14 +96,17 @@ public class LinkedList {
     public void removeOdds() {
         int i = 0;
         int[] arr = toArray();
+        Node current = head, prev = null;
         if(arr.length == 0) {
             return;
         }
-        while(i< arr.length){
+        while(i<arr.length){
+            prev = current;
+            current = current.getNext();
         if(i/2 != 0) {
-            arr[i] = arr[i+1];
             i++;
-        }i++;
+            prev.setNext(current.getNext());
+        }else{ i++;}
         }
     }
 
