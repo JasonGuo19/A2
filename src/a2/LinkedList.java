@@ -94,17 +94,18 @@ public class LinkedList {
     public void removeOdds() {
         int[] arr = toArray();
         Node current = head, prev = null;
-        for(int j=0; j<arr.length; j++ ){
-            if(j/2 == 0){
+        for (int j = 0; j < arr.length; j++) {
+            if (j / 2 == 0) {
                 prev = current;
                 current = current.getNext();
-        }
-            if(j/2 != 0){
+            }
+            if (j / 2 != 0) {
                 prev = current;
                 current = current.getNext();
                 prev.setNext(current);
             }
             j++;
+        }
     }
 
     /**
