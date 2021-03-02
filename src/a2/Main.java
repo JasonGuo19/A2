@@ -11,7 +11,7 @@ public class Main {
         list.add(4);
         list.add(1);
 
-        list.multiply(2);
+        list.multiply(4);
         System.out.println(list.toString());
     }
 }

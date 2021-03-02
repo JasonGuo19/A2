@@ -163,7 +163,7 @@ public class LinkedList {
      * @param factor the amount to multiply the number of occurrences of each element by
      */
     public void multiply(int factor) {
-        Node current = head;
+        Node current = head, prev = null;
         if(factor == 0){
             clear();
         }
@@ -173,19 +173,16 @@ public class LinkedList {
         ArrayList<Integer> arr1 = new ArrayList<>();
         int[] arr = toArray();
         int k = arr.length;
-        int i = 0;
-        int j =0;
-        while(i<k){
-            if(j<factor){
-                arr1.add(current.getValue());
-                j++;
-            } else {
+        for(int i=0;i<k;i++) {
+            for (int j = 0; j < factor; j++) {
+                prev = current;
+                arr1.add(prev.getValue());
+            }
+            if (current.hasNext()) {
                 current = current.getNext();
             }
-            i++;
         }
     }
-
     /**
      * Reverse the list
      * <p>
@@ -257,9 +254,7 @@ public class LinkedList {
             current = current.getNext();
             temp = current;
             if(arr.contains(temp)){
-                return true;
-            }
-
+            }return true;
         }
         return false;
     }
